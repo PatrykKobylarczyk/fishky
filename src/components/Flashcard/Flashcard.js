@@ -1,23 +1,54 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import './Flashcard.scss'
-import Logo from '../Logo/Logo';
-import Button from '../Button/Button';
 
-const Flashcard = ({buttonText, LearnBtnHandler, CreateBtnHandler}) => {
+//COMPONENTS
+import Logo from '../Logo/Logo';
+import ChooseOption from '../ChooseOption/ChooseOption';
+import Views from '../Views/Views';
+import LearningCard from '../LearningCard/LearningCard';
+
+const Flashcard = () => {
+
+    const [buttonText, setButtonText] = useState(['learn', 'create'])
+    const [option, setOption] = useState([])
+    const [selectedCategory, setSelectedCategory] = useState(null)
+    const [learning, setLearning] = useState(false)
+
+
+
+    const LearnBtnHandler = () => {
+        setOption(['learn'])
+        setButtonText('start')
+    }
+
+    const CreateBtnHandler = () => {
+        setOption(['create'])
+    }
+
+    const StartLearningHandler = () => {
+        setLearning(true)
+        setOption([`${selectedCategory}`])
+    }
+
     return (
         <div className="card">
-            <Logo />
-            <div className="chooseOption">
-                <Button
-                    buttonText={buttonText[0]}
-                    btnHandler={LearnBtnHandler}
-                />
-                <Button
-                    buttonText={buttonText[1]}
-                    btnHandler={CreateBtnHandler}
-                />
-            </div>
+            <Logo
+                option={option}
+            />
+            {option.length === 0 &&
+                <ChooseOption
+                    buttonText={buttonText}
+                    LearnBtnHandler={LearnBtnHandler}
+                    CreateBtnHandler={CreateBtnHandler}
+                />}
+            {option.includes('learn') &&
+                <Views
+                    buttonText={buttonText}
+                    StartLearningHandler={StartLearningHandler}
+                    selectedCategory={selectedCategory}
+                    setSelectedCategory={setSelectedCategory}
+                />}
+            {learning && <LearningCard />}
         </div>
     );
 }

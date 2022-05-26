@@ -1,0 +1,17 @@
+.learningCard{
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    display: grid;
+    place-items: center;
+}
+
+.learningCard:hover {
+    cursor: pointer;
+}
+
+.flipped{
+    transform: rotateY(180deg);
+}

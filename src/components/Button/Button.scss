@@ -8,6 +8,7 @@
     box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.25);
 
     font-family: inherit;
+    font-weight: 700;
     font-size: 20px;
 
     transition: all .12s ease;
@@ -15,7 +16,6 @@
 
 .btn:hover{
     box-shadow: 8px 8px 10px 3px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
-    filter: brightness(115%);
+    transform: translateY(-1px);
     cursor: pointer;
 }
