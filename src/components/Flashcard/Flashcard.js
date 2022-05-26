@@ -36,9 +36,7 @@ const Flashcard = () => {
 
     return (
         <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={cardFlipHandler}>
-            <Logo
-                option={option}
-            />
+            {!learning && <Logo option={option}/>} 
             {option.length === 0 &&
                 <ChooseOption
                     buttonText={buttonText}

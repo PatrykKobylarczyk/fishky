@@ -1,13 +1,11 @@
 .card-face{
+    position: absolute;
     width: 100%;
     height: 100%;
     font-family: inherit;
     font-weight: 700;
     color: rgb(255, 255, 255);
-    display: grid;
-    place-items: center;
     backface-visibility: hidden;
-    position: relative;
 }
 
 .card-face:hover {
@@ -19,6 +17,8 @@
 }
 
 .obverse{
+    display: grid;
+    place-items: center;
     position: absolute;
     top: 50%;
     left:50%;
@@ -26,5 +26,7 @@
 }
 
 .reverse{
+    display: grid;
+    place-items: center;
     transform: rotateY(180deg);
 }

@@ -5,7 +5,7 @@ import './LearningCard.scss'
 import Obverse from './Obverse'
 import Reverse from './Reverse'
 
-const LearningCars = ({option, isFlipped}) => {
+const LearningCars = ({option}) => {
 
     return (
         <>
