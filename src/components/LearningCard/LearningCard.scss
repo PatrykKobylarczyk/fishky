@@ -1,4 +1,4 @@
-.learningCard{
+.card-face{
     width: 100%;
     height: 100%;
     font-family: inherit;
@@ -6,12 +6,25 @@
     color: rgb(255, 255, 255);
     display: grid;
     place-items: center;
+    backface-visibility: hidden;
+    position: relative;
 }
 
-.learningCard:hover {
+.card-face:hover {
     cursor: pointer;
 }
 
 .flipped{
+    transform: rotateY(180deg);
+}
+
+.obverse{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.reverse{
     transform: rotateY(180deg);
 }

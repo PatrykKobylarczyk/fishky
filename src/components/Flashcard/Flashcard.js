@@ -13,8 +13,12 @@ const Flashcard = () => {
     const [option, setOption] = useState([])
     const [selectedCategory, setSelectedCategory] = useState(null)
     const [learning, setLearning] = useState(false)
+    const [isFlipped, setFlipped] = useState(false)
 
-
+    
+    const cardFlipHandler = () => {
+        learning && setFlipped(prev => !prev)
+    }
 
     const LearnBtnHandler = () => {
         setOption(['learn'])
@@ -31,7 +35,7 @@ const Flashcard = () => {
     }
 
     return (
-        <div className="card">
+        <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={cardFlipHandler}>
             <Logo
                 option={option}
             />
@@ -48,7 +52,11 @@ const Flashcard = () => {
                     selectedCategory={selectedCategory}
                     setSelectedCategory={setSelectedCategory}
                 />}
-            {learning && <LearningCard />}
+            {learning && 
+            <LearningCard 
+            option={option}
+            isFlipped={isFlipped}
+            />}
         </div>
     );
 }

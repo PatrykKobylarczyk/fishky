@@ -12,6 +12,10 @@
     font-weight: 700;
     display: grid;
     place-items: center;
+
+    perspective: 1000px;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
     
      .learnMode{
         height: 65%;
@@ -20,8 +24,4 @@
         justify-content: space-around;
         align-items: center;
     }
-}
-
-@media screen {
-    
 }

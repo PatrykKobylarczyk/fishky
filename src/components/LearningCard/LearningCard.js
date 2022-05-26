@@ -1,22 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './LearningCard.scss'
 
 //COMPONENTS
 import Obverse from './Obverse'
 import Reverse from './Reverse'
 
-const LearningCars = () => {
-
-    const [isFlipped, setIsFlipped] = useState(false)
-
-    const cardFlipHandler = () => {
-        setIsFlipped(prev => !prev)
-    }
+const LearningCars = ({option, isFlipped}) => {
 
     return (
-        <div className={`learningCard ${isFlipped ? 'flipped' : ''} `} onClick={cardFlipHandler}>
-            {isFlipped ? <Obverse /> : <Reverse />}
-        </div>
+        <>
+            <Obverse option={option}/>  
+            <Reverse  option={option}/>
+        </>
     );
 }
 
