@@ -51,7 +51,7 @@ const Category = ({ selectedCategory, setSelectedCategory }) => {
     }
 
     return (
-        <div className="btn">
+        <div className="btn select">
             <Select
                 value={selectedCategory}
                 options={options}
