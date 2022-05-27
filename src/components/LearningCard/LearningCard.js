@@ -2,15 +2,15 @@ import React from 'react'
 import './LearningCard.scss'
 
 //COMPONENTS
-import Obverse from './Obverse'
-import Reverse from './Reverse'
+import EnglishCard from './EnglishCard';
+import ReactCard from './ReactCard';
 
-const LearningCars = ({option}) => {
+const LearningCars = ({ option, cardNumber, selectedCategory }) => {
 
     return (
         <>
-            <Obverse option={option}/>  
-            <Reverse  option={option}/>
+            {selectedCategory.includes('english') && <EnglishCard option={option} cardNumber={cardNumber}/>}
+            {selectedCategory.includes('react') && <ReactCard option={option} cardNumber={cardNumber}/>}
         </>
     );
 }

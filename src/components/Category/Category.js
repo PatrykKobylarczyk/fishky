@@ -15,7 +15,7 @@ const colourStyles = {
         height: '80px',
         border: 'none',
         borderRadius: '10px',
-        color: 'rgb(255, 255, 255)' ,
+        color: 'rgb(255, 255, 255)',
         background: 'rgb(240, 3, 43)',
         boxShadow: '3px 3px 10px 3px rgba(0, 0, 0, 0.25)',
         cursor: 'pointer',
@@ -43,8 +43,8 @@ const colourStyles = {
 };
 
 
-const Category = ({selectedCategory, setSelectedCategory}) => {
-    
+const Category = ({ selectedCategory, setSelectedCategory }) => {
+
 
     const handleChange = (e) => {
         setSelectedCategory(e.value)
@@ -57,7 +57,7 @@ const Category = ({selectedCategory, setSelectedCategory}) => {
                 options={options}
                 styles={colourStyles}
                 onChange={handleChange}
-                placeholder={'select'}
+                placeholder={selectedCategory}
             />
         </div>
     );

@@ -6,6 +6,10 @@
     font-weight: 700;
     color: rgb(255, 255, 255);
     backface-visibility: hidden;
+    padding: 40px;
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .card-face:hover {
@@ -29,4 +33,13 @@
     display: grid;
     place-items: center;
     transform: rotateY(180deg);
+
+    p{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+        margin-top: 60px;
+    }
 }
+
+

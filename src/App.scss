@@ -12,3 +12,45 @@ body {
   display: grid;
   place-items: center;
 }
+
+.navIcon{
+  width: 60px;
+  height: 60px;
+  transition: all .1s;
+  display: grid;
+  place-items: center;
+}
+
+.navIcon:hover{
+  cursor: pointer;
+  transform: scale(1.15);
+}
+
+.appView{
+  display: flex;
+  align-items: center;
+}
+
+//SCROLLBAR
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(32, 32, 32); 
+  border-radius: 5px;
+  height: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 236, 225); 
+}
