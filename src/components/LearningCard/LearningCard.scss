@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 .card-face{
     position: absolute;
     width: 100%;
@@ -5,8 +12,8 @@
     font-family: inherit;
     font-weight: 700;
     color: rgb(255, 255, 255);
-    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
     padding: 40px;
     text-align: center;
     overflow-y: auto;
@@ -18,22 +25,28 @@
 }
 
 .flipped{
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
 }
 
 .obverse{
+    display: -ms-grid;
     display: grid;
     place-items: center;
     position: absolute;
     top: 50%;
     left:50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
 .reverse{
+    display: -ms-grid;
     display: grid;
     place-items: center;
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
 
     p{
         font-size: 18px;
