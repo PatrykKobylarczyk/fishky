@@ -64,7 +64,6 @@ const Flashcard = () => {
         }, 100);
 
         setFlipped(false)
-        console.log(cardNumber);
     }
 
     const prevCard = () => {

@@ -27,7 +27,7 @@ body {
 }
 
 .appView{
-  width: 100%;
+  width: 600px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -63,5 +63,8 @@ body {
   .navIcon{
     width: 30px;
     height: 30px;
+  }
+  .appView{
+    width: 100vw;
   }
 }
