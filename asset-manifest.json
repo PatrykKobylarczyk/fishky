@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/fishky/static/css/main.fcb3d9b5.css",
+    "main.css": "/fishky/static/css/main.d8ea0db1.css",
     "main.js": "/fishky/static/js/main.d9eea759.js",
     "index.html": "/fishky/index.html",
-    "main.fcb3d9b5.css.map": "/fishky/static/css/main.fcb3d9b5.css.map",
+    "main.d8ea0db1.css.map": "/fishky/static/css/main.d8ea0db1.css.map",
     "main.d9eea759.js.map": "/fishky/static/js/main.d9eea759.js.map"
   },
   "entrypoints": [
-    "static/css/main.fcb3d9b5.css",
+    "static/css/main.d8ea0db1.css",
     "static/js/main.d9eea759.js"
   ]
 }
