@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.35442485.css",
-    "main.js": "/static/js/main.3a25b92c.js",
-    "index.html": "/index.html",
-    "main.35442485.css.map": "/static/css/main.35442485.css.map",
-    "main.3a25b92c.js.map": "/static/js/main.3a25b92c.js.map"
+    "main.css": "/fishky/static/css/main.35442485.css",
+    "main.js": "/fishky/static/js/main.3a25b92c.js",
+    "index.html": "/fishky/index.html",
+    "main.35442485.css.map": "/fishky/static/css/main.35442485.css.map",
+    "main.3a25b92c.js.map": "/fishky/static/js/main.3a25b92c.js.map"
   },
   "entrypoints": [
     "static/css/main.35442485.css",
