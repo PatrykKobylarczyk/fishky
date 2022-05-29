@@ -94,6 +94,8 @@ const Flashcard = () => {
     return (
         <IconContext.Provider value={{ size: 30, color: 'rgb(80, 80, 80)' }}>
             <div className="appView">
+
+            {/* learning part */}
                 {learning && <span className='navIcon' onClick={prevCard}><MdOutlineArrowBackIos /></span>}
                 <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={cardFlipHandler}>
                     {!learning && <Logo option={option} />}
@@ -121,6 +123,9 @@ const Flashcard = () => {
                 {learning && <span className='navIcon' onClick={nextCard}><MdOutlineArrowForwardIos /></span>}
             </div>
         </IconContext.Provider>
+        // creating part
+                        
+
     );
 }
 

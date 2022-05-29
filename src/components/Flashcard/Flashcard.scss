@@ -27,7 +27,7 @@
     }
 }
 
-@media (orientation: portrait) {
+@media (max-width: 720px) {
     .card {
         width: 70vw;
         height: 80vh;

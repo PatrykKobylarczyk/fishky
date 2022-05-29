@@ -59,7 +59,7 @@ body {
   background: rgb(0, 236, 225); 
 }
 
-@media (orientation: portrait) {
+@media (max-width: 720px) {
   .navIcon{
     width: 30px;
     height: 30px;
