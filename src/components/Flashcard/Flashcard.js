@@ -61,7 +61,7 @@ const Flashcard = () => {
                 default:
                     console.log('Oop, I did it again:)');
             }
-        }, 100);
+        }, 65);
 
         setFlipped(false)
     }
@@ -86,7 +86,7 @@ const Flashcard = () => {
                 default:
                     console.log('Oop, I did it again:)');
             }
-        }, 100);
+        }, 65);
         setFlipped(false)
         console.log(cardNumber);
     }

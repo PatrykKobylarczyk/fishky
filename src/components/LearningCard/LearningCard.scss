@@ -1,3 +1,49 @@
+// .card-face{
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     font-family: inherit;
+//     font-weight: 700;
+//     color: rgb(255, 255, 255);
+//     backface-visibility: hidden;
+//     -webkit-backface-visibility: hidden;
+//     padding: 40px;
+//     text-align: center;
+//     overflow-y: auto;
+//     overflow-x: hidden;
+// }
+
+// .card-face:hover {
+//     cursor: pointer;
+// }
+
+// .flipped{
+//     transform: rotateY(180deg);
+// }
+
+// .obverse{
+//     display: grid;
+//     place-items: center;
+//     position: absolute;
+//     top: 50%;
+//     left:50%;
+//     transform: translate(-50%, -50%);
+// }
+
+// .reverse{
+//     display: grid;
+//     place-items: center;
+//     transform: rotateY(180deg);
+
+//     p{
+//         font-size: 18px;
+//         font-weight: 400;
+//         line-height: 30px;
+//         margin-top: 60px;
+//     }
+// }
+
+
 .card-face{
     position: absolute;
     width: 100%;
@@ -17,23 +63,24 @@
     cursor: pointer;
 }
 
-.flipped{
-    transform: rotateY(180deg);
-}
-
 .obverse{
+    display: -ms-grid;
     display: grid;
     place-items: center;
     position: absolute;
     top: 50%;
     left:50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
 .reverse{
+    display: -ms-grid;
     display: grid;
     place-items: center;
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
 
     p{
         font-size: 18px;
@@ -42,5 +89,3 @@
         margin-top: 60px;
     }
 }
-
-
