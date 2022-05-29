@@ -49,5 +49,10 @@ export const english = [
         word: 'Perceive',
         description: 'postrzegać'
     },
+    {
+        id: 11,
+        word: 'implies',
+        description: 'oznacza, sugeruje, implikuje'
+    },
 
 ]

@@ -2,7 +2,7 @@ body {
   font-size: 20px;
   font-weight: 700;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .app{
@@ -61,6 +61,34 @@ body {
 
 @media (max-width: 720px) {
   .navIcon{
+    width: 30px;
+    height: 30px;
+  }
+  .appView{
+    width: 100vw;
+  }
+}
+
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (max-width: 700px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (max-width: 700px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (max-width: 700px),
+only screen and (        min-device-pixel-ratio: 2)      and (max-width: 700px),
+only screen and (                min-resolution: 192dpi) and (max-width: 700px),
+only screen and (                min-resolution: 2dppx)  and (max-width: 700px) { 
+
+  /* Medium screen, retina, stuff to override above media query */
+  //dvh dynamic viewport unit for IOS devices
+  body{
+    height: 100dvh;
+  }
+
+  .app{
+    height: 100dvh;
+  }
+
+ .navIcon{
     width: 30px;
     height: 30px;
   }

@@ -11,7 +11,7 @@ const options = [
 const colourStyles = {
     control: (styles) => ({
         ...styles,
-        width: '200px',
+        width: '100%',
         height: '80px',
         border: 'none',
         borderRadius: '10px',
@@ -19,7 +19,7 @@ const colourStyles = {
         background: 'rgb(240, 3, 43)',
         boxShadow: '3px 3px 10px 3px rgba(0, 0, 0, 0.25)',
         cursor: 'pointer',
-        padding: ' 0 30px'
+        padding: ' 0 20px'
     }),
     placeholder: (defaultStyles) => ({
         ...defaultStyles,
