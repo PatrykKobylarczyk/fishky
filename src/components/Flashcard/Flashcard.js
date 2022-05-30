@@ -3,8 +3,10 @@ import './Flashcard.scss'
 
 //DATA
 import { english } from '../Data/english'
+import { react } from '../Data/react';
 
 //ICONS
+import { IconContext } from 'react-icons';
 import { MdOutlineArrowForwardIos, MdOutlineArrowBackIos } from 'react-icons/md'
 
 //COMPONENTS
@@ -12,8 +14,7 @@ import Logo from '../Logo/Logo';
 import ChooseOption from '../ChooseOption/ChooseOption';
 import Views from '../Views/Views';
 import LearningCard from '../LearningCard/LearningCard';
-import { IconContext } from 'react-icons';
-import { react } from '../Data/react';
+import Create from '../Create/Create';
 
 const Flashcard = () => {
 
@@ -33,7 +34,7 @@ const Flashcard = () => {
     }
 
     const CreateBtnHandler = () => {
-        setOption(['create'])
+        setOption(['createNewCard'])
     }
 
     const StartLearningHandler = () => {
@@ -95,7 +96,7 @@ const Flashcard = () => {
         <IconContext.Provider value={{ size: 30, color: 'rgb(80, 80, 80)' }}>
             <div className="appView">
 
-            {/* learning part */}
+                {/* learning part */}
                 {learning && <span className='navIcon' onClick={prevCard}><MdOutlineArrowBackIos /></span>}
                 <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={cardFlipHandler}>
                     {!learning && <Logo option={option} />}
@@ -119,12 +120,15 @@ const Flashcard = () => {
                             cardNumber={cardNumber}
                             selectedCategory={selectedCategory}
                         />}
+                    {option.includes('createNewCard') &&
+                        <Create selectedCategory={selectedCategory} setOption={setOption}/>
+                    }
                 </div>
                 {learning && <span className='navIcon' onClick={nextCard}><MdOutlineArrowForwardIos /></span>}
             </div>
         </IconContext.Provider>
         // creating part
-                        
+
 
     );
 }
