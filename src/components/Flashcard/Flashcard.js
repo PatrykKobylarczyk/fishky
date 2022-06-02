@@ -89,7 +89,6 @@ const Flashcard = () => {
             }
         }, 65);
         setFlipped(false)
-        console.log(cardNumber);
     }
 
     return (
@@ -121,7 +120,7 @@ const Flashcard = () => {
                             selectedCategory={selectedCategory}
                         />}
                     {option.includes('createNewCard') &&
-                        <Create selectedCategory={selectedCategory} setOption={setOption}/>
+                        <Create selectedCategory={selectedCategory} setOption={setOption} setSelectedCategory={setSelectedCategory}/>
                     }
                 </div>
                 {learning && <span className='navIcon' onClick={nextCard}><MdOutlineArrowForwardIos /></span>}
