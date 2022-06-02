@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Flashcard.scss'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //DATA
 import { english } from '../Data/english'
