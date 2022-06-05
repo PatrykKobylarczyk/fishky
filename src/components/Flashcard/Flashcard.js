@@ -19,7 +19,8 @@ import Create from '../Create/Create';
 import PrevArrow from '../Arrows/PrevArrow';
 import NextArrow from '../Arrows/NextArrow';
 import MenuIcon from '../Menu/MenuIcon';
-import Menu from '../Menu/Menu';
+import MobileMenu from '../Menu/MobileMenu';
+import DesktopMenu from '../Menu/DesktopMenu';
 
 const Flashcard = () => {
 
@@ -46,8 +47,6 @@ const Flashcard = () => {
             setFlipped(false)
         }
     }, [location])
-
-
 
     const StartLearningHandler = () => {
         setOption(selectedCategory)
@@ -103,10 +102,10 @@ const Flashcard = () => {
     }
 
     const openMenuHandler = () => {
-        openMenu(true)
+        ((event) => event.currentTarget == event.target) && openMenu(true)
     }
-    
-    const closeMenu = () =>{
+
+    const closeMenu = () => {
         openMenu(false)
     }
 
@@ -114,42 +113,46 @@ const Flashcard = () => {
         <IconContext.Provider value={{ size: 30, color: 'rgb(80, 80, 80)' }}>
             <div className="appView">
                 {curLoc === '/fishky/learn/learning-card' && <PrevArrow prevCard={prevCard} />}
-                <div className="cardMenu">
-                    <div className={`card ${isFlipped && 'flipped'}`} onClick={cardFlipHandler}>
-                        {curLoc !== '/fishky/learn/learning-card' && <Logo option={option} />}
-                        <Routes>
-                            <Route exact path='/fishky/' element={
-                                <ChooseOption
-                                    buttonText={['learn', 'create']}
-                                />}
-                            />
-                            <Route path='/fishky/learn' element={
-                                <Views
-                                    buttonText='start'
-                                    StartLearningHandler={StartLearningHandler}
-                                    selectedCategory={selectedCategory}
-                                    setSelectedCategory={setSelectedCategory}
-                                />}
-                            />
-                            <Route path='/fishky/learn/learning-card' element={
-                                <LearningCard
-                                    option={option}
-                                    isFlipped={isFlipped}
-                                    cardNumber={cardNumber}
-                                    selectedCategory={selectedCategory}
-                                />}
-                            />
-                            <Route path='/fishky/create' element={
-                                <Create
-                                    selectedCategory={selectedCategory}
-                                    setOption={setOption}
-                                    setSelectedCategory={setSelectedCategory}
-                                />}
-                            />
-                        </Routes>
-                    </div>
-                    {menu ? <Menu closeMenu={closeMenu}/> : <MenuIcon openMenuHandler={openMenuHandler}/> }
+                <div className={`card ${isFlipped && 'flipped'}`} onClick={cardFlipHandler}>
+                    {curLoc !== '/fishky/learn/learning-card' && <Logo option={option} />}
+                    <Routes>
+                        <Route exact path='/fishky/' element={
+                            <ChooseOption
+                                buttonText={['learn', 'create']}
+                            />}
+                        />
+                        <Route path='/fishky/learn' element={
+                            <Views
+                                buttonText='start'
+                                StartLearningHandler={StartLearningHandler}
+                                selectedCategory={selectedCategory}
+                                setSelectedCategory={setSelectedCategory}
+                            />}
+                        />
+                        <Route path='/fishky/learn/learning-card' element={
+                            <LearningCard
+                                option={option}
+                                isFlipped={isFlipped}
+                                cardNumber={cardNumber}
+                                selectedCategory={selectedCategory}
+                            />}
+                        />
+                        <Route path='/fishky/create' element={
+                            <Create
+                                selectedCategory={selectedCategory}
+                                setOption={setOption}
+                                setSelectedCategory={setSelectedCategory}
+                            />}
+                        />
+                    </Routes>
                 </div>
+                <IconContext.Provider value={{ size: 25, color: 'rgb(255, 255, 255)' }}>
+                    {isMobile
+                        ? menu
+                            ? <MobileMenu closeMenu={closeMenu} />
+                            : <MenuIcon openMenuHandler={openMenuHandler} />
+                        : <DesktopMenu />}
+                </IconContext.Provider>
                 {curLoc === '/fishky/learn/learning-card' && <NextArrow nextCard={nextCard} />}
             </div>
         </IconContext.Provider>

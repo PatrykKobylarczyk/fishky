@@ -3,7 +3,7 @@ import { CgMenuLeft } from 'react-icons/cg'
 
 const UpArrow = ({openMenuHandler}) => {
     return ( 
-        <span className='navIcon' onClick={openMenuHandler}>
+        <span className='menuIcon' onClick={openMenuHandler}>
             <CgMenuLeft />
         </span>
      );

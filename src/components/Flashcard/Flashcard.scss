@@ -1,7 +1,7 @@
 .card{
     width: 400px;
-    height: 70vh;
-    max-height: 70vh;
+    height: 90vh;
+    max-height: 90vh;
     background: -o-linear-gradient(305deg, rgb(39, 37, 37), rgb(43, 42, 42));
     background: linear-gradient(145deg, rgb(39, 37, 37), rgb(43, 42, 42));
     -webkit-box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.4);
@@ -63,7 +63,8 @@
 
 @media (max-width: 720px) {
     .card {
-        width: 70vw;
+        width: 80vw;
+        min-width: 80vw;
         height: 80vh;
         padding: 0;
     }

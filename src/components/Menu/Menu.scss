@@ -1,5 +1,9 @@
 .menu{
-    width: 70vw;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
     height: 70px;
     display: flex;
     justify-content: space-between;
@@ -21,8 +25,16 @@
     height: 50px;
     border-radius: 10px;
     background: rgb(240, 3, 43);
+    filter: brightness(90%);
     -webkit-box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.25);
             box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.25);
+    transition: transform .1s ease-in-out;
+}
+
+.menuBtn:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    filter: brightness(120%);
 }
 
 .navIcon{
@@ -30,3 +42,55 @@
     height: 50px;
     margin-top: 30px;
 }
+
+.mobile-menu{
+    width: 400px;
+    position: absolute;
+    bottom: 3vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: -o-linear-gradient(305deg, rgb(39, 37, 37), rgb(43, 42, 42));
+    background: linear-gradient(145deg, rgb(39, 37, 37), rgb(43, 42, 42));
+    -webkit-box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+
+}
+
+.menuIcon{
+    position: absolute;
+    bottom: 3vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.desktop-menu{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70px;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: -o-linear-gradient(305deg, rgb(39, 37, 37), rgb(43, 42, 42));
+    background: linear-gradient(145deg, rgb(39, 37, 37), rgb(43, 42, 42));
+    -webkit-box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.4);
+    
+    .desktopMenuBtns{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 720px) {
+    .mobile-menu{
+        width: 80vw;
+        height: 100px;
+    }
+  }

@@ -44,7 +44,7 @@ const Create = ({ selectedCategory, setOption, setSelectedCategory }) => {
             )
         }
         // setOption('/fishky/')
-        navigate(-1) 
+        navigate('/fishky/') 
     }
 
     return (
