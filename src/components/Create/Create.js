@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Category from '../Category/Category';
+import { useNavigate } from 'react-router-dom'
 import './Create.scss'
 
 import { english } from '../Data/english'
@@ -11,6 +12,7 @@ const Create = ({ selectedCategory, setOption, setSelectedCategory }) => {
     const [word, setWord] = useState('');
     const [description, setDescription] = useState('');
     const [error, setError] = useState(false);
+    let navigate = useNavigate();
 
     const newCardHandler = (e) => {
         e.preventDefault();
@@ -18,7 +20,6 @@ const Create = ({ selectedCategory, setOption, setSelectedCategory }) => {
             setError(true)
             return;
         }
-        debugger;
         if (selectedCategory === 'english') {
             //check if array includes that word in object 
             (
@@ -42,7 +43,8 @@ const Create = ({ selectedCategory, setOption, setSelectedCategory }) => {
                     })
             )
         }
-        setOption(['learn', 'create'])
+        // setOption('/fishky/')
+        navigate(-1) 
     }
 
     return (

@@ -15,6 +15,7 @@ const Views = ({buttonText, StartLearningHandler, selectedCategory, setSelectedC
             <Button
                 buttonText={buttonText}
                 btnHandler={StartLearningHandler}
+                buttonPath='/fishky/learn/learning-card'
             />
         </div>
      );

@@ -9,11 +9,13 @@ const ChooseOption = ({ buttonText, LearnBtnHandler, CreateBtnHandler }) => {
         <div className="chooseOption">
             <Button
                 buttonText={buttonText[0]}
-                btnHandler={LearnBtnHandler}
+                // btnHandler={LearnBtnHandler}
+                buttonPath='/fishky/learn'
             />
             <Button
                 buttonText={buttonText[1]}
-                btnHandler={CreateBtnHandler}
+                // btnHandler={CreateBtnHandler}
+                buttonPath='/fishky/create'
             />
         </div>
     );

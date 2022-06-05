@@ -5,12 +5,12 @@ import './LearningCard.scss'
 import EnglishCard from './EnglishCard';
 import ReactCard from './ReactCard';
 
-const LearningCars = ({ option, cardNumber, selectedCategory }) => {
+const LearningCars = ({ option, cardNumber, selectedCategory, curLoc }) => {
 
     return (
         <>
-            {selectedCategory.includes('english') && <EnglishCard option={option} cardNumber={cardNumber}/>}
-            {selectedCategory.includes('react') && <ReactCard option={option} cardNumber={cardNumber}/>}
+            {selectedCategory === 'english' && <EnglishCard option={option} cardNumber={cardNumber} />}
+            {selectedCategory === 'react' && <ReactCard option={option} cardNumber={cardNumber} />}
         </>
     );
 }

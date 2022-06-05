@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import './Logo.scss'
 
 const Logo = ({ option }) => {
 
+    const location = useLocation();
+    let curLoc = location.pathname
+
     let sufix = '';
     let sufixColor = '';
-    if (option.includes('english')) {
-        sufix = 'en';
-        sufixColor = 'rgb(3, 58, 240)';
-    } else if (option.includes('react')) {
-        sufix = 're';
-        sufixColor = 'rgb(0, 236, 225)';
+
+    if (curLoc == '/fishky/learn/learning-card') {
+        if (option === 'english') {
+            sufix = 'en';
+            sufixColor = 'rgb(3, 58, 240)';
+        }
+        if (option === 'react') {
+            sufix = 're';
+            sufixColor = 'rgb(0, 236, 225)';
+        }
     } else {
         sufix = 'ky';
         sufixColor = '';
@@ -19,7 +27,7 @@ const Logo = ({ option }) => {
 
     return (
         <div className="logo">
-            <h3>fish<span style={{color: `${sufixColor}`}}>{sufix}</span></h3>
+            <h3>fish<span style={{ color: `${sufixColor}` }}>{sufix}</span></h3>
         </div>
 
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import { english } from '../Data/english'
 import Logo from '../Logo/Logo';
 
-const EnglishCard = ({option, cardNumber}) => {
+const EnglishCard = ({option, cardNumber, curLoc}) => {
     return (
         <>
             <div className="card-face obverse">

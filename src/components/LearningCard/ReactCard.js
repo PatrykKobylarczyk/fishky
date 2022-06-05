@@ -3,7 +3,7 @@ import { react } from '../Data/react'
 import Logo from '../Logo/Logo';
 
 
-const ReactCard = ({option, cardNumber}) => {
+const ReactCard = ({option, cardNumber, curLoc}) => {
     return (
         <>
             <div className="card-face obverse">
