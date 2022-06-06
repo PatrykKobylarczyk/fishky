@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Flashcard.scss'
 import { Route, Routes, useLocation } from 'react-router-dom';
+import useCheckMobileScreen from '../../customHooks/useCheckMobileScreen';
 
 //DATA
 import { english } from '../Data/english'
@@ -28,11 +29,11 @@ const Flashcard = () => {
     const [selectedCategory, setSelectedCategory] = useState('english');
     const [isFlipped, setFlipped] = useState(false);
     const [cardNumber, setCardNumber] = useState(0);
-    const [isMobile, setIsMobile] = useState(true);
     const [menu, openMenu] = useState(false)
-
+    
     const location = useLocation();
     const curLoc = location.pathname
+    const isMobile = useCheckMobileScreen()
 
     //I need flipping just in this location
     const cardFlipHandler = () => {
