@@ -32,19 +32,19 @@ const Flashcard = () => {
     const [menu, openMenu] = useState(false)
     
     const location = useLocation();
-    const curLoc = location.pathname
+    const currentLocation = location.pathname
     const isMobile = useCheckMobileScreen()
 
     //I need flipping just in this location
     const cardFlipHandler = () => {
-        if (curLoc === '/fishky/learn/learning-card') {
+        if (currentLocation === '/fishky/learn/learning-card') {
             setFlipped(prev => !prev)
         }
     }
 
     // It disables flipping card in another locations
     useEffect(() => {
-        if (curLoc !== '/fishky/learn/learning-card') {
+        if (currentLocation !== '/fishky/learn/learning-card') {
             setFlipped(false)
         }
     }, [location])
@@ -113,9 +113,9 @@ const Flashcard = () => {
     return (
         <IconContext.Provider value={{ size: 30, color: 'rgb(80, 80, 80)' }}>
             <div className="appView">
-                {curLoc === '/fishky/learn/learning-card' && <PrevArrow prevCard={prevCard} />}
+                {currentLocation === '/fishky/learn/learning-card' && <PrevArrow prevCard={prevCard} />}
                 <div className={`card ${isFlipped && 'flipped'}`} onClick={cardFlipHandler}>
-                    {curLoc !== '/fishky/learn/learning-card' && <Logo option={option} />}
+                    {currentLocation !== '/fishky/learn/learning-card' && <Logo option={option} />}
                     <Routes>
                         <Route exact path='/fishky/' element={
                             <ChooseOption
@@ -154,7 +154,7 @@ const Flashcard = () => {
                             : <MenuIcon openMenuHandler={openMenuHandler} />
                         : <DesktopMenu />}
                 </IconContext.Provider>
-                {curLoc === '/fishky/learn/learning-card' && <NextArrow nextCard={nextCard} />}
+                {currentLocation === '/fishky/learn/learning-card' && <NextArrow nextCard={nextCard} />}
             </div>
         </IconContext.Provider>
     );
