@@ -24,7 +24,7 @@ const Create = ({ selectedCategory, setOption, setSelectedCategory }) => {
             //check if array includes that word in object 
             (
                 english.filter(item => item.word === word).length !== 0
-                    ? console.log('dziala')
+                    ? console.log('array english includes this word')
                     : english.push({
                         id: english.length + 1,
                         word: word,
@@ -35,7 +35,7 @@ const Create = ({ selectedCategory, setOption, setSelectedCategory }) => {
         if (selectedCategory === 'react') {
             (
                 react.filter(item => item.word === word).length !== 0
-                    ? console.log('react dziala')
+                    ? console.log('array react includes this word')
                     : react.push({
                         id: react.length + 1,
                         word: word,

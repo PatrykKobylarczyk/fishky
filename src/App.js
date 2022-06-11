@@ -20,7 +20,7 @@ const App = () => {
   const [selectedCategory, setSelectedCategory] = useState('english');
   const [isFlipped, setFlipped] = useState(false);
 
-  // I use local storage to store selected category, because when I refresh learning card I lose sufix of my logo
+  // I use  sessionStorage to store selected category, because when I refresh learning card I lose sufix of my logo
   useEffect(() => {
     sessionStorage.setItem('selectedCategory', selectedCategory);
   }, [selectedCategory]);
@@ -46,7 +46,6 @@ const App = () => {
           console.log('Oop, I did it again:)');
       }
     }, 65);
-
     setFlipped(false)
   }
 
@@ -72,13 +71,8 @@ const App = () => {
       }
     }, 65);
     setFlipped(false)
-   
   }
 
-  // useEffect(()=> {
-  //   console.log(localStorage);
-  //   console.log(selectedCategory);
-  // }, [])
 
   const location = useLocation();
   const currentLocation = location.pathname

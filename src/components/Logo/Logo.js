@@ -6,7 +6,6 @@ import './Logo.scss'
 const Logo = () => {
 
     const category = sessionStorage.getItem('selectedCategory');
-  
 
     const location = useLocation();
     let curLoc = location.pathname
@@ -27,10 +26,6 @@ const Logo = () => {
         sufix = 'ky';
         sufixColor = '';
     }
-
-    useEffect(()=>{
-        console.log(category);
-    },[curLoc])
 
     return (
         <div className="logo">
