@@ -5,7 +5,7 @@ import './Logo.scss'
 
 const Logo = () => {
 
-    const category = localStorage.getItem('selectedCategory');
+    const category = sessionStorage.getItem('selectedCategory');
   
 
     const location = useLocation();
