@@ -3,7 +3,10 @@ import { useLocation } from 'react-router-dom';
 
 import './Logo.scss'
 
-const Logo = ({ option }) => {
+const Logo = () => {
+
+    const category = localStorage.getItem('selectedCategory');
+  
 
     const location = useLocation();
     let curLoc = location.pathname
@@ -12,11 +15,11 @@ const Logo = ({ option }) => {
     let sufixColor = '';
 
     if (curLoc == '/fishky/learn/learning-card') {
-        if (option === 'english') {
+        if (category === 'english') {
             sufix = 'en';
             sufixColor = 'rgb(3, 58, 240)';
         }
-        if (option === 'react') {
+        if (category === 'react') {
             sufix = 're';
             sufixColor = 'rgb(0, 236, 225)';
         }
@@ -24,6 +27,10 @@ const Logo = ({ option }) => {
         sufix = 'ky';
         sufixColor = '';
     }
+
+    useEffect(()=>{
+        console.log(category);
+    },[curLoc])
 
     return (
         <div className="logo">
