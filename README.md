@@ -20,4 +20,8 @@ Project is: completed.
 
 Any further updates will mostly cover new projects. I am also thinking of adding creating account, but this is now not under development.
 
+## Author
+
+Patryk Kobylarczyk 
+
 
