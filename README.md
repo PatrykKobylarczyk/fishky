@@ -3,7 +3,8 @@
  I wanted to use my free time to learn English words, react and js theory. Hence the idea to create an application for flashcards.
  The concept and design were entirely developed by me
 
-live: https://patrykkobylarczyk.github.io/fishky/
+## Live
+https://patrykkobylarczyk.github.io/fishky/
 
 
 ## Built with: 
