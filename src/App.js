@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import './App.scss';
+import { onSnapshot, collection } from "firebase/firestore";
 
 //COMPONENTS
 import Flashcard from './components/Flashcard/Flashcard';
@@ -13,12 +14,33 @@ import { IconContext } from 'react-icons';
 //DATA
 import { english } from './components/Data/english'
 import { react } from './components/Data/react';
+import db from './firebase'
 
 const App = () => {
 
   const [cardNumber, setCardNumber] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('english');
   const [isFlipped, setFlipped] = useState(false);
+  const [data, setData] = useState([]);
+
+  //data form firebase
+  const ref = collection(db, 'learn')
+
+  const getData = () => {
+    onSnapshot(ref, (querySnapshot)=>{
+      const items = [];
+      querySnapshot.forEach(doc=>{
+        items.push(doc.data())
+      })
+      setData(items)
+    })
+  }
+
+  useEffect(()=>{
+    getData();
+    console.log(data[0]);
+  },[])
+
 
   // I use  sessionStorage to store selected category, because when I refresh learning card I lose sufix of my logo
   useEffect(() => {

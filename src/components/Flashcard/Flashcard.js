@@ -37,14 +37,14 @@ const Flashcard = ({cardNumber, selectedCategory, setSelectedCategory, setFlippe
         if (currentLocation !== '/fishky/learn/learning-card') {
             setFlipped(false)
         }
-    }, [location])
+    }, [currentLocation, setFlipped])
 
     const StartLearningHandler = () => {
         setOption(selectedCategory)
     }
 
     const openMenuHandler = () => {
-        ((event) => event.currentTarget == event.target) && openMenu(true)
+        ((event) => event.currentTarget === event.target) && openMenu(true)
     }
 
     const closeMenu = () => {

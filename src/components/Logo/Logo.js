@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 import './Logo.scss'
@@ -13,7 +13,7 @@ const Logo = () => {
     let sufix = '';
     let sufixColor = '';
 
-    if (curLoc == '/fishky/learn/learning-card') {
+    if (curLoc === '/fishky/learn/learning-card') {
         if (category === 'english') {
             sufix = 'en';
             sufixColor = 'rgb(3, 58, 240)';

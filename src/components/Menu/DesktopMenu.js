@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MdOutlineHome, MdOutlineSchool, MdAddCircleOutline, MdClose } from 'react-icons/md'
+import { MdOutlineHome, MdOutlineSchool, MdAddCircleOutline } from 'react-icons/md'
 import './Menu.scss'
 
 const DesktopMenu = () => {
