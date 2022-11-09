@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './App.scss';
-import { onSnapshot, collection } from "firebase/firestore";
+// import { onSnapshot, collection } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 //COMPONENTS
 import Flashcard from './components/Flashcard/Flashcard';
@@ -16,30 +17,37 @@ import { english } from './components/Data/english'
 import { react } from './components/Data/react';
 import db from './firebase'
 
+
 const App = () => {
 
   const [cardNumber, setCardNumber] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('english');
   const [isFlipped, setFlipped] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
 
   //data form firebase
-  const ref = collection(db, 'learn')
-
-  const getData = () => {
-    onSnapshot(ref, (querySnapshot)=>{
+  
+  const getData = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(db, 'learn'));
       const items = [];
-      querySnapshot.forEach(doc=>{
-        items.push(doc.data())
+      querySnapshot.forEach((doc) => {
+        items.push({
+          name: doc.id,
+          data: doc.data()
+        })
       })
       setData(items)
-    })
-  }
+    }
+    catch (error) {
+      console.log(error);
+    }
+  };
 
-  useEffect(()=>{
-    getData();
-    console.log(data[0]);
-  },[])
+  useEffect(() => {
+    getData()
+  }, [])
+
 
 
   // I use  sessionStorage to store selected category, because when I refresh learning card I lose sufix of my logo
@@ -110,6 +118,7 @@ const App = () => {
             setSelectedCategory={setSelectedCategory}
             isFlipped={isFlipped}
             setFlipped={setFlipped}
+            data={data}
           />
           {currentLocation === '/fishky/learn/learning-card' && <NextArrow nextCard={nextCard} />}
         </div>

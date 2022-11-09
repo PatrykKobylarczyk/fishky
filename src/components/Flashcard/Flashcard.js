@@ -16,7 +16,7 @@ import MenuIcon from '../Menu/MenuIcon';
 import MobileMenu from '../Menu/MobileMenu';
 import DesktopMenu from '../Menu/DesktopMenu';
 
-const Flashcard = ({cardNumber, selectedCategory, setSelectedCategory, setFlipped, isFlipped}) => {
+const Flashcard = ({cardNumber, selectedCategory, setSelectedCategory, setFlipped, isFlipped, data}) => {
 
     const [option, setOption] = useState();
     const [menu, openMenu] = useState(false)
@@ -51,9 +51,14 @@ const Flashcard = ({cardNumber, selectedCategory, setSelectedCategory, setFlippe
         openMenu(false)
     }
 
+    // useEffect(()=>{
+    //     console.log(data);
+    // },[data])
+
     return (
         <div >
             <div className={`card ${isFlipped && 'flipped'}`} onClick={cardFlipHandler}>
+                {/* <h1>{data}</h1> */}
                 {currentLocation !== '/fishky/learn/learning-card' && <Logo />}
                 <Routes>
                     <Route exact path='/fishky/' element={
@@ -75,6 +80,7 @@ const Flashcard = ({cardNumber, selectedCategory, setSelectedCategory, setFlippe
                             isFlipped={isFlipped}
                             cardNumber={cardNumber}
                             selectedCategory={selectedCategory}
+                            data={data}
                         />}
                     />
                     <Route path='/fishky/create' element={

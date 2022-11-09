@@ -5,7 +5,8 @@ import './LearningCard.scss'
 import EnglishCard from './EnglishCard';
 import ReactCard from './ReactCard';
 
-const LearningCars = ({ option, cardNumber, selectedCategory, curLoc }) => {
+
+const LearningCars = ({ option, cardNumber, selectedCategory }) => {
 
     return (
         <>
