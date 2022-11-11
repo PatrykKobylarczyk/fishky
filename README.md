@@ -1,4 +1,4 @@
-# Flashcard app for learning english words and react
+# Portfolio with React.js and Tailwind CSS
 
 ## Live
 https://react-portfolio-patrykkobylarczyk.vercel.app
