@@ -1,28 +1,17 @@
 # Flashcard app for learning english words and react
 
- I wanted to use my free time to learn English words, react and js theory. Hence the idea to create an application for flashcards.
- The concept and design were entirely developed by me
-
 ## Live
-https://patrykkobylarczyk.github.io/fishky/
-
+https://react-portfolio-patrykkobylarczyk.vercel.app
 
 ## Built with: 
 
 - ReactJS
-- SCSS
-- React router dom
-- React icons
-- Firebase
+- Tailwind CSS
+- Framer motion
+- React hook form
+- React anchor link smooth scroll
 
 ## Status:
 
 Project is: completed.
-
-Any further updates will mostly cover new projects. I am also thinking of adding creating account, but this is now not under development.
-
-## Author
-
-Patryk Kobylarczyk 
-
 
