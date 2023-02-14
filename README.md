@@ -1,5 +1,7 @@
-# An app with popular flashcards for learning languages or whatever category you can think of. 
 
+# Fishky - flipcards
+
+ An app with popular flashcards for learning languages or whatever category you can think of.
 ## Live
 https://patrykkobylarczyk.github.io/fishky/
 
