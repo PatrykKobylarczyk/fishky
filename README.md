@@ -1,15 +1,14 @@
-# Portfolio with React.js and Tailwind CSS
+# An app with popular flashcards for learning languages or whatever category you can think of. 
 
 ## Live
-https://react-portfolio-patrykkobylarczyk.vercel.app
+https://patrykkobylarczyk.github.io/fishky/
 
 ## Built with: 
 
 - ReactJS
-- Tailwind CSS
-- Framer motion
-- React hook form
-- React anchor link smooth scroll
+- Scss
+- React icons
+- React select
 
 ## Status:
 
